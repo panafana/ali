@@ -14,7 +14,8 @@ import android.widget.TextView;
 public class Ypoloipo extends AppCompatActivity {
 
 
-    public float vesoda,veksoda;
+    public float vesoda, veksoda;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,29 +27,17 @@ public class Ypoloipo extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
 
 
-        vesoda =getIntent().getFloatExtra("vesoda",0);
-        veksoda =getIntent().getFloatExtra("veksoda",0);
+        vesoda = getIntent().getFloatExtra("vesoda", 0);
+        veksoda = getIntent().getFloatExtra("veksoda", 0);
 
         float out = sp.getFloat("ypoloipo", -1);
 
-        float ypolfinal= vesoda - veksoda + out ;
+        float ypolfinal = vesoda - veksoda + out;
         editor.putFloat("ypoloipo", ypolfinal);
         editor.commit();
 
         ypol.setText(Float.toString(ypolfinal));
 
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
-    public void startEnglandGames(View view){
-        startActivity(new Intent(this, EnglandGames.class));
     }
 }
