@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Ypoloipo extends AppCompatActivity {
@@ -37,6 +38,10 @@ public class Ypoloipo extends AppCompatActivity {
         editor.commit();
 
         ypol.setText(Float.toString(ypolfinal));
+        if( ypolfinal<20.0){
+            Toast.makeText(Ypoloipo.this, "Το υπόλοιό σας είναι χαμηλό!",
+                    Toast.LENGTH_LONG).show();
+        }
 
 
     }

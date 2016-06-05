@@ -20,11 +20,11 @@
         </activity>
         <activity
             android:name=".Values"
-            android:label="@string/title_activity_football"
+            android:label="Values"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Ypoloipo"
-            android:label="@string/title_activity_basketball"
+            android:label="Ypoloipo"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
