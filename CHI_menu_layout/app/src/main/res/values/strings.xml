@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Καλωσορίσατε στην ΑΛΥ!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_football">Football</string>
+    <string name="title_activity_basketball">Basketball</string>
+    <string name="title_activity_england_games">EnglandGames</string>
+</resources>
