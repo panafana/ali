@@ -21,7 +21,7 @@ public class Ypoloipo extends AppCompatActivity {
         setContentView(R.layout.activity_ypoloipo);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        TextView ypol = (TextView) findViewById(R.id.textView8);
         SharedPreferences sp = getSharedPreferences("storage", Ypoloipo.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
@@ -34,9 +34,6 @@ public class Ypoloipo extends AppCompatActivity {
         float ypolfinal= vesoda - veksoda + out ;
         editor.putFloat("ypoloipo", ypolfinal);
         editor.commit();
-
-        TextView ypol = (TextView) findViewById(R.id.textView8);
-
 
         ypol.setText(Float.toString(ypolfinal));
 

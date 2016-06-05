@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Button submit = (Button) findViewById(R.id.submit);
         EditText esodaText = (EditText) findViewById(R.id.editText);
         EditText eksodaText = (EditText) findViewById(R.id.editText2);
+        Button next = (Button) findViewById(R.id.next);
+
 
       submit.setOnClickListener(new View.OnClickListener() {
 
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), Ypoloipo.class);
                     i.putExtra("vesoda", vesoda);
                     i.putExtra("veksoda", veksoda);
+                    esodaText.getText().clear();
+                    eksodaText.getText().clear();
                     startActivity(i);
                 }else{
                     return;
@@ -62,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        next.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent i = new Intent(getApplicationContext(), Ypoloipo.class);
+                startActivity(i);
+            }
+        }
+        );
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
