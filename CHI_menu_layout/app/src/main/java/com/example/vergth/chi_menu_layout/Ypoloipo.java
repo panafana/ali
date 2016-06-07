@@ -3,6 +3,7 @@ package com.example.vergth.chi_menu_layout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +27,15 @@ public class Ypoloipo extends AppCompatActivity {
         TextView ypol = (TextView) findViewById(R.id.textView8);
         SharedPreferences sp = getSharedPreferences("storage", Ypoloipo.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
+        SharedPreferences s= PreferenceManager.
+                getDefaultSharedPreferences(this);
 
 
+        String warnS=s.getString("warn","0");
+        float warn=0;
+        if(warnS.length()>0){
+            warn= Float.valueOf(warnS);
+        }
         vesoda = getIntent().getFloatExtra("vesoda", 0);
         veksoda = getIntent().getFloatExtra("veksoda", 0);
 
@@ -38,7 +46,7 @@ public class Ypoloipo extends AppCompatActivity {
         editor.commit();
 
         ypol.setText(Float.toString(ypolfinal));
-        if( ypolfinal<20.0){
+        if( ypolfinal<warn){
             Toast.makeText(Ypoloipo.this, "Το υπόλοιό σας είναι χαμηλό!",
                     Toast.LENGTH_LONG).show();
         }

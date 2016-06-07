@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.vergth.chi_menu_layout.MainActivity">
+    activity_main.xml
+
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Settings" >
+        <EditTextPreference
+            android:title="Προειδοποίηση υπολοίπου    "
+            android:summary="Ορίστε το ποσό του υπολοίπου κάτω απο το οποίο θα γίνεται πορειδοποίηση για χαμηλό υπόλοιπο"
+            android:key="warn"
+            android:inputType="number"/>
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

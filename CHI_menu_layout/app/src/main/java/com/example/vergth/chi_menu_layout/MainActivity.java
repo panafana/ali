@@ -3,6 +3,9 @@ package com.example.vergth.chi_menu_layout;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
@@ -13,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -28,16 +32,21 @@ public class MainActivity extends AppCompatActivity {
     public String esoda ,eksoda;
     public float vesoda,veksoda;
 
+    private Toolbar toolbar;
+    private NavigationView nvDrawer;
+    private ActionBarDrawerToggle drawerToggle;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         Button submit = (Button) findViewById(R.id.submit);
         EditText esodaText = (EditText) findViewById(R.id.editText);
         EditText eksodaText = (EditText) findViewById(R.id.editText2);
         Button next = (Button) findViewById(R.id.next);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
 
 
       submit.setOnClickListener(new View.OnClickListener() {
@@ -95,32 +104,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.search:
-                Toast.makeText(MainActivity.this, "search pressed",
-                        Toast.LENGTH_LONG).show();
+            case android.R.id.home:
+               // mDrawer.openDrawer(GravityCompat.START);
                 return true;
 
             case R.id.settings:
-                Toast.makeText(MainActivity.this, "settings pressed",
-                        Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.first:
-                if (item.isChecked()) item.setChecked(false);
-                else item.setChecked(true);
-                Toast.makeText(MainActivity.this, "first selected",
-                        Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.second:
-                if (item.isChecked()) item.setChecked(false);
-                else item.setChecked(true);
-                Toast.makeText(MainActivity.this, "second selected",
-                        Toast.LENGTH_LONG).show();
-                return true;
+                Intent i = new Intent(getApplicationContext(), Settings.class);
+                startActivity(i);
+              //  startActivityForResult(i, SETTINGS_RESULT);
+
+
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+    }
 
 
 
