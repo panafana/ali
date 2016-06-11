@@ -40,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button submit = (Button) findViewById(R.id.submit);
+        Button provlepsi = (Button) findViewById(R.id.provlepsi);
         EditText esodaText = (EditText) findViewById(R.id.editText);
         EditText eksodaText = (EditText) findViewById(R.id.editText2);
         Button next = (Button) findViewById(R.id.next);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 
 
@@ -82,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         }
+        );
+
+        provlepsi.setOnClickListener(new View.OnClickListener(){
+                                    public void onClick(View view){
+                                        Intent i = new Intent(getApplicationContext(), Provlepsi.class);
+                                        startActivity(i);
+                                    }
+                                }
         );
 
 
@@ -123,12 +133,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-    }
-
-
-
-    public void startBasketball(View view) {
-        startActivity(new Intent(this, Ypoloipo.class));
     }
 
     @Override
