@@ -57,13 +57,26 @@ public class MainActivity extends AppCompatActivity {
             EditText eksodaText = (EditText) findViewById(R.id.editText2);
             public void onClick(View view) {
                 // Get references from the views
-                if(esodaText.getText().length()!=0 && eksodaText.getText().length()!=0) {
+                if(esodaText.getText().length()!=0 || eksodaText.getText().length()!=0) {
                 // Get the actual usable values of views
-                esoda  = (esodaText.getText().toString());
-                eksoda = (eksodaText.getText().toString());
+                    if(esodaText.getText().length()==0){
+                        vesoda=0;
+                    }else{
+                        esoda  = (esodaText.getText().toString());
+                        vesoda = Float.valueOf(esoda);
+                    }
 
-                    vesoda = Float.valueOf(esoda);
-                    veksoda = Float.valueOf(eksoda);
+                    if(eksodaText.getText().length()==0){
+                        veksoda=0;
+                    }else{
+                        eksoda = (eksodaText.getText().toString());
+                        veksoda = Float.valueOf(eksoda);
+                    }
+
+
+
+
+
 
                     Intent i = new Intent(getApplicationContext(), Ypoloipo.class);
                     i.putExtra("vesoda", vesoda);

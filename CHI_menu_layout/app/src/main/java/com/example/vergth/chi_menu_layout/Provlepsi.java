@@ -32,12 +32,14 @@ public class Provlepsi extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     public String eisodos ,eksodos;
-    public float veisodos=0,veksodos=0,outpout=0;
+    public float veisodos=0,veksodos=0,outpout;
     public EditText eisodosText,eksodosText;
     public  TextView out;
     public boolean next=true;
     private Timer timer;
     public Button miden;
+    public SharedPreferences sp ;
+    public SharedPreferences.Editor editor ;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,11 @@ public class Provlepsi extends AppCompatActivity {
         eksodosText = (EditText) findViewById(R.id.eksodos);
         out = (TextView) findViewById(R.id.textView3);
         veisodos=0;
+        sp  = getSharedPreferences("storage", Ypoloipo.MODE_PRIVATE);
+        editor = sp.edit();
 
+        outpout= sp.getFloat("output", -1);
+        out.setText(Float.toString(outpout));
 
        // eisodosText.addTextChangedListener(eisodosWatcher);
        // eksodosText.addTextChangedListener(eksodosWatcher);
@@ -61,19 +67,36 @@ public class Provlepsi extends AppCompatActivity {
 
     private View.OnClickListener midenismos = new View.OnClickListener() {
         public void onClick(View view) {
-            if (eisodosText.getText().length() != 0 && eksodosText.getText().length() != 0) {
-                if (veisodos == 0) {
+
+
+            if(eisodosText.getText().length() == 0)  {
+                veisodos=0;
+            }else{
+                veisodos= Float.parseFloat((eisodosText.getText().toString()));
+            }
+            if(eksodosText.getText().length() == 0)   {
+                veksodos=0;
+            }else{
+                veksodos = Float.parseFloat(eksodosText.getText().toString());
+            }
+            outpout+=veisodos;
+               /* if (veisodos == 0) {
                     outpout = Float.parseFloat(eisodosText.getText().toString());
                     veisodos = outpout;
                 }
-                veksodos = Float.parseFloat(eksodosText.getText().toString());
+                */
+
+
                 outpout -= veksodos;
+                editor.putFloat("output",outpout);
+                editor.commit();
                 out.setText(Float.toString(outpout));
                 eksodosText.getText().clear();
+                eisodosText.getText().clear();
 
 
             }
-        }
+
     };
 
 
