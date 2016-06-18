@@ -134,8 +134,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.settings:
                 Intent i = new Intent(getApplicationContext(), Settings.class);
                 startActivity(i);
-              //  startActivityForResult(i, SETTINGS_RESULT);
-
 
 
             default:
