@@ -41,6 +41,7 @@ public class Ypoloipo extends AppCompatActivity {
 
         float out = sp.getFloat("ypoloipo", 0);
 
+
         float ypolfinal = vesoda - veksoda + out;
         editor.putFloat("ypoloipo", ypolfinal);
         editor.commit();

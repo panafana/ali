@@ -51,7 +51,7 @@ public class Settings extends PreferenceActivity {
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Είστε σίγουροι?")
+        builder.setMessage("Είστε σίγουροι οτι θέλετε να διαγράψετε όλα τα δεδομένα?")
                 .setPositiveButton("Ναι", dialogClickListener)
                 .setNegativeButton("Οχι", dialogClickListener).show();
     }
