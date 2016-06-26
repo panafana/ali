@@ -6,6 +6,11 @@
             android:summary="Ορίστε το ποσό του υπολοίπου κάτω απο το οποίο θα γίνεται πορειδοποίηση για χαμηλό υπόλοιπο"
             android:key="warn"
             android:inputType="number"/>
+        <Preference
+            android:title="Επαναφορά"
+            android:summary="Επαναφέρει όλες τις καταχωρημένες τιμές της εφαρμογής στο 0"
+            android:key="reset"
+            />
     </PreferenceCategory>
 
 

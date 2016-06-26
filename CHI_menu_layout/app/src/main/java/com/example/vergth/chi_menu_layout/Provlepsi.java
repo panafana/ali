@@ -53,7 +53,7 @@ public class Provlepsi extends AppCompatActivity {
         sp  = getSharedPreferences("storage", Ypoloipo.MODE_PRIVATE);
         editor = sp.edit();
 
-        outpout= sp.getFloat("output", -1);
+        outpout= sp.getFloat("output", 0);
         out.setText(Float.toString(outpout));
 
        // eisodosText.addTextChangedListener(eisodosWatcher);

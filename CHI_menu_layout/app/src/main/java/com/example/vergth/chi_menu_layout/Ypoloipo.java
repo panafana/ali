@@ -39,7 +39,7 @@ public class Ypoloipo extends AppCompatActivity {
         vesoda = getIntent().getFloatExtra("vesoda", 0);
         veksoda = getIntent().getFloatExtra("veksoda", 0);
 
-        float out = sp.getFloat("ypoloipo", -1);
+        float out = sp.getFloat("ypoloipo", 0);
 
         float ypolfinal = vesoda - veksoda + out;
         editor.putFloat("ypoloipo", ypolfinal);

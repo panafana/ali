@@ -8,14 +8,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/blue"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.vergth.chi_menu_layout.Provlepsi"
+    android:background="#ffffff"
 
-   >
-
-
-
+    >
 
 
 
@@ -25,11 +22,11 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/eisodos"
-        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
 
         android:hint="Εσοδα"
-        android:layout_marginTop="44dp" />
+        android:layout_marginTop="35dp"
+        android:textColor="#2e7d32" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,31 +37,34 @@
         android:layout_below="@+id/eisodos"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
-        android:hint="Εξοδα" />
+        android:hint="Εξοδα"
+        android:textColor="#c62828" />
 
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="Πρόβλεψη"
         android:id="@+id/textView3"
         android:layout_below="@+id/miden"
         android:layout_centerHorizontal="true"
         android:textSize="25dp"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="35dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="#ADD8E6"
 
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
 
         android:id="@+id/miden"
         android:onClick="miden"
-        android:text="Επόμενη τιμή "
-        android:layout_marginTop="20dp"
+        android:text="Επομενη τιμη"
+        android:layout_marginTop="40dp"
+
         android:layout_below="@+id/eksodos"
         android:layout_centerHorizontal="true" />
 
